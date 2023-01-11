@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from finalproject.view import main_page
+from finalproject.view import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", main_page),
+    path("", index),
     path('products/', include('products.urls'))
 ]
