@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block inheritance %}
+
+{%for perfume in perfume %}
+<div class="card" style="width: 18rem;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/CHANEL_No5_parfum.jpg/220px-CHANEL_No5_parfum.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{perfume.name}}</h5>
+      <p class="card-text">Olor a: {{perfume.smell}}</p>
+      <p class="card-text">Precio: {{perfume.price}}$</p>
+      {% if perfume.stock == True %}
+        <p class="card-text">Hay stock</p>
+      {% else %}
+        <p class="card-text">No hay stock</p> 
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}

@@ -20,8 +20,17 @@ def list_perfume(request):
 def list_ring(request):
     all_ring = Ring.objects.all()
     context = {
-        'Ring':all_ring
+        'ring':all_ring
     }
     return render(request , 'list_ring.html', context=context)
+
+def create_clothing(request):
+    return render(request , 'create_clothing.html', context={}) 
+
+def create_perfume(request):
+    return render(request , 'create_perfume.html', context={})
+
+def create_ring(request):
+    return render(request , 'create_ring.html', context={})      
 
 # Create your views here.
