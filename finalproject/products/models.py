@@ -5,7 +5,7 @@ class Clothing (models.Model):
     colour = models.CharField(max_length=50)
     size = models.CharField(max_length=50)
     price = models.FloatField()
-    stock = models.BooleanField()
+    stock = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
@@ -14,7 +14,7 @@ class Perfum (models.Model):
     name = models.CharField(max_length=50)
     smell = models.CharField(max_length=50)
     price = models.FloatField()
-    stock = models.BooleanField()
+    stock = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
@@ -24,7 +24,7 @@ class Ring (models.Model):
     material = models.CharField(max_length=50)
     weight = models.FloatField()
     price = models.FloatField()
-    stock = models.BooleanField() 
+    stock = models.BooleanField(default=True) 
 
     def __str__(self):
         return self.name       

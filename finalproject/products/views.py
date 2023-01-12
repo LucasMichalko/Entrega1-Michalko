@@ -25,7 +25,11 @@ def list_ring(request):
     return render(request , 'list_ring.html', context=context)
 
 def create_clothing(request):
-    return render(request , 'create_clothing.html', context={}) 
+    if request.method == 'GET':
+        return render(request , 'create_clothing.html', context={})
+    elif request.method == 'POST':
+        Clothing.objects.create(name = request.POST ['name'], colour = request.POST['colour'], size = request.POST['size'], price = request.POST['price'])
+        return render(request , 'create_clothing.html', context={})
 
 def create_perfume(request):
     return render(request , 'create_perfume.html', context={})
