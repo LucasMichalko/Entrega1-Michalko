@@ -32,9 +32,18 @@ def create_clothing(request):
         return render(request , 'create_clothing.html', context={})
 
 def create_perfume(request):
-    return render(request , 'create_perfume.html', context={})
+    if request.method == 'GET':
+        return render(request , 'create_perfume.html', context={})
+    elif request.method == 'POST':
+        Perfum.objects.create(name = request.POST ['name'], smell = request.POST['smell'], price = request.POST['price'])
+        return render(request , 'create_perfume.html', context={})
+    
 
 def create_ring(request):
-    return render(request , 'create_ring.html', context={})      
+    if request.method == 'GET':
+        return render(request , 'create_ring.html', context={})
+    elif request.method == 'POST':
+        Ring.objects.create(name = request.POST ['name'], material = request.POST['material'], weight = request.POST['weight'], price = request.POST['price'])
+        return render(request , 'create_clothing.html', context={})     
 
 # Create your views here.

@@ -2,4 +2,16 @@
 
 {% block inheritance %}
 
+<form action="" method="POST">
+
+    {% csrf_token %}
+
+    <p>Nombre: <input type="text" name="name"></p>
+    <p>Olor: <input type="text" name="smell"></p>
+    <p>Precio: <input type="number" name="price"></p>
+
+    <input type="submit" value="Crear producto">
+
+</form>
+
 {% endblock %}
