@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block inheritance %}
+<form action="/products/list_perfume" method="get">
+  <input type="text" name="name">
+  <input type="submit" value="Buscar">
+
+</form>
 
 {%for perfume in perfume %}
 <div class="card" style="width: 18rem;">

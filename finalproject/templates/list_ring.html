@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
+
 {% block inheritance %}
+
+<form action="/products/list_ring" method="get">
+  <input type="text" name="name">
+  <input type="submit" value="Buscar">
+
+</form>
 
 {%for ring in ring %}
 <div class="card" style="width: 18rem;">
@@ -8,7 +15,7 @@
     <div class="card-body">
       <h5 class="card-title">{{ring.name}}</h5>
       <p class="card-text">Material: {{ring.material}}</p>
-      <p class="card-text">Peso: {{ring.weight}}</p>
+      <p class="card-text">Peso: {{ring.weight}}g</p>
       <p class="card-text">Precio: {{ring.price}}$</p>
       {% if .stock == True %}
         <p class="card-text">Hay stock</p>

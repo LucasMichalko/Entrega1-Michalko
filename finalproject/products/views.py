@@ -4,21 +4,33 @@ from django.http import HttpResponse
 from products.models import Clothing, Perfum, Ring
 
 def list_clothing(request):
-    all_clothing = Clothing.objects.all()
+    if 'name' in request.GET:
+        name = request.GET['name']
+        all_clothing = Clothing.objects.filter(name__contains=request.GET['name'] )
+    else:
+        all_clothing = Clothing.objects.all()
     context = {
         'clothing':all_clothing
     }
     return render(request , 'list_clothing.html', context=context)
 
 def list_perfume(request):
-    all_perfume = Perfum.objects.all()
+    if 'name' in request.GET:
+        name = request.GET['name']
+        all_perfume = Perfum.objects.filter(name__contains=request.GET['name'] )
+    else:
+        all_perfume = Perfum.objects.all()
     context = {
         'perfume':all_perfume
     }
     return render(request , 'list_perfume.html', context=context)
 
 def list_ring(request):
-    all_ring = Ring.objects.all()
+    if 'name' in request.GET:
+        name = request.GET['name']
+        all_ring = Ring.objects.filter(name__contains=request.GET['name'] )
+    else:
+        all_ring = Ring.objects.all()
     context = {
         'ring':all_ring
     }

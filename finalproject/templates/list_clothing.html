@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
 {% block inheritance %}
+<form action="/products/list_clothing" method="get">
+  <input type="text" name="name">
+  <input type="submit" value="Buscar">
 
+</form>
 {%for clothing in clothing %}
 <div class="card" style="width: 18rem;">
-    <img src="https://img.freepik.com/vector-gratis/conjunto-ropa-verano_74855-446.jpg?w=2000" class="card-img-top" alt="...">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Camiseta-negra.jpg/220px-Camiseta-negra.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{clothing.name}}</h5>
       <p class="card-text">Color: {{clothing.colour}}</p>
